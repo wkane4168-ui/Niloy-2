@@ -1,1 +1,58 @@
-*{box-sizing:border-box}body{margin:0;background:#fff9f0;color:#34191a;font-family:Arial,"Noto Sans Bengali",sans-serif}.hero{min-height:730px;text-align:center;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 25%,#fff2c9,#edc69b 48%,#8b1018 150%)}.hero-bg{position:absolute;inset:0;opacity:.15;background-image:radial-gradient(#8b1018 1px,transparent 1px);background-size:24px 24px}.hero-content{position:relative;padding:45px 15px}.location{display:inline-block;padding:8px 18px;border:1px solid #8b101833;border-radius:30px;background:#ffffff99}.eyebrow,.heading>span{color:#8b1018;font-weight:800;letter-spacing:1px}.eyebrow{margin-top:28px}.hero h1,.heading h2,footer h2{font-family:Georgia,"Noto Serif Bengali",serif}.hero h1{font-size:clamp(34px,7vw,68px);line-height:1.08;margin:12px}.hero h1 span{font-size:.58em}.sub{font-size:20px}.ornament{color:#8b1018;font-size:22px}.durga{width:min(350px,78vw);height:315px;margin:20px auto;position:relative;background:#f0c47d;border:5px solid #fff2d2;border-radius:45% 45% 20px 20px;box-shadow:0 20px 50px #5e101933;overflow:hidden}.durga .halo{position:absolute;inset:25px;border-radius:50%;background:#ffe18b}.durga img{position:relative;width:100%;height:100%;z-index:1}section{width:min(1080px,92%);margin:auto;padding:72px 0}.heading{text-align:center;margin-bottom:28px}.heading h2{font-size:32px;margin:8px 0}.heading p{color:#806e68}.countdowns{display:grid;grid-template-columns:1fr 1fr;gap:20px}.countdowns article,.results,.dhak-box,.songs>div{background:#fff;border-radius:25px;padding:28px;box-shadow:0 14px 40px #5d271314;border:1px solid #d8a04c44;text-align:center}.countdowns article>b{font-size:32px}.countdowns h3{color:#8b1018}.timer{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:18px}.timer div{background:#fff5ea;border-radius:12px;padding:10px}.timer b{display:block;color:#8b1018;font-size:24px}.timer small{font-size:11px}.days{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:18px}.days div{background:#fff;border-radius:15px;padding:12px}.days strong{display:block;font-size:25px;color:#8b1018}.days small{color:#8b1018}.choices{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}.choice{border:2px solid #eadbd0;background:#fff;border-radius:16px;padding:16px 4px;font-size:16px;cursor:pointer}.choice strong{display:block;font-size:27px;color:#8b1018}.choice.selected{border-color:#8b1018;background:#fff0e8}.results{margin-top:18px;text-align:left}.result-head{display:flex;justify-content:space-between;margin-bottom:15px}.barrow{margin:13px 0}.barlabel{display:flex;justify-content:space-between}.bar{height:10px;background:#eee0d8;border-radius:99px;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,#8b1018,#d19a32)}.dhak-box{text-align:center;background:linear-gradient(145deg,#fff1e4,#f4d0b1)}#dhak{width:235px;height:235px;border:12px solid #760b13;border-radius:50%;background:#b20d1b;color:white;box-shadow:0 0 0 7px #d19a32,0 18px 45px #5d101955;cursor:pointer;display:grid;place-content:center;margin:auto;transition:.15s}#dhak:active{transform:scale(.94)}#dhak span{font-size:65px}#dhak b{font-size:32px;font-family:Georgia,serif}#dhak small{font-size:15px}.dhak-box p{color:#8b1018;font-weight:bold}.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.gallery figure{margin:0;background:white;border-radius:18px;overflow:hidden;box-shadow:0 10px 30px #5d271313}.gallery img{width:100%;height:260px;object-fit:cover;display:block}.gallery figcaption{text-align:center;padding:9px;color:#8b1018;font-weight:bold}.songs{display:grid;gap:12px}.songs>div{display:grid;grid-template-columns:45px 1fr 1.5fr;align-items:center;text-align:left}.songs b{color:#8b1018}.songs audio{width:100%}footer{text-align:center;background:#681019;color:#fff0d6;padding:50px 20px}footer h2{font-size:30px}footer hr{width:110px;border:0;border-top:1px solid #d8a04c}footer strong{color:#f2c45d}@media(max-width:700px){.countdowns{grid-template-columns:1fr}.choices{grid-template-columns:repeat(3,1fr)}.gallery{grid-template-columns:1fr 1fr}.days{gap:4px}.days div{font-size:12px;padding:8px 2px}.songs>div{grid-template-columns:35px 1fr}.songs audio{grid-column:1/-1}.hero{min-height:650px}}@media(max-width:430px){.gallery{grid-template-columns:1fr}.hero h1{font-size:33px}}
+/* পুরো ওয়েবসাইটের স্কেল ও ফন্ট সামান্য ছোট করা */
+body {
+  font-size: 14px;
+}
+
+h1 { font-size: 1.6rem !important; }
+h2 { font-size: 1.3rem !important; }
+h3 { font-size: 1.1rem !important; }
+
+/* দুর্গার নতুন ত্রিশূল ও শারদীয়া থিম */
+.durga-theme {
+  text-align: center;
+  margin-top: 15px;
+  padding: 12px;
+  background: rgba(139, 0, 0, 0.05);
+  border-radius: 12px;
+  border: 1px dashed #8b0000;
+}
+.trishul-icon {
+  font-size: 2.2rem;
+  line-height: 1;
+}
+.theme-text {
+  font-weight: bold;
+  color: #8b0000;
+  margin-top: 4px;
+  font-size: 0.95rem;
+}
+
+/* ঢাকের বাটন ছোট করা */
+#dhak {
+  padding: 8px 16px !important;
+  font-size: 0.9rem !important;
+  max-width: 140px;
+  margin: 0 auto;
+}
+#dhak span {
+  font-size: 1.5rem !important;
+}
+
+/* গ্যালারির ছবির ফাঁকা অংশ ছোট করা */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 10px;
+}
+.gallery figure {
+  margin: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f0f0f0;
+}
+.gallery img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  display: block;
+}
