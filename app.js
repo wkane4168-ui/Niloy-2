@@ -1,3 +1,24 @@
-const bn=n=>String(n).replace(/\d/g,d=>"০১২৩৪৫৬৭৮৯"[d]);function tick(){document.querySelectorAll(".timer").forEach(e=>{let x=new Date(e.dataset.date)-Date.now();if(x<=0){e.innerHTML="<div style='grid-column:1/-1'><b>শুভ পুজো! 🌺</b></div>";return}let d=Math.floor(x/864e5),h=Math.floor(x%864e5/36e5),m=Math.floor(x%36e5/6e4),s=Math.floor(x%6e4/1e3);e.innerHTML=`<div><b>${bn(d)}</b><small>দিন</small></div><div><b>${bn(h)}</b><small>ঘণ্টা</small></div><div><b>${bn(m)}</b><small>মিনিট</small></div><div><b>${bn(s)}</b><small>সেকেন্ড</small></div>`})}tick();setInterval(tick,1000);
-const K="puja2026votes",V=JSON.parse(localStorage.getItem(K)||"null")||[0,0,0,0,0,0];function render(){let t=V.reduce((a,b)=>a+b,0);document.getElementById("total").textContent=`মোট ${bn(t)} জন`;document.getElementById("choices").innerHTML=V.map((_,i)=>`<button class="choice" data-i="${i}"><strong>${bn(i+1)}</strong> সেট</button>`).join("");document.getElementById("resultList").innerHTML=V.map((n,i)=>{let p=t?Math.round(n*1000/t)/10:0;return `<div class="barrow"><div class="barlabel"><span>${bn(i+1)} সেট</span><b>${bn(p)}% (${bn(n)} জন)</b></div><div class="bar"><div class="fill" style="width:${p}%"></div></div></div>`}).join("");document.querySelectorAll(".choice").forEach(b=>b.onclick=()=>{if(localStorage.getItem(K+"v"))return alert("তুমি ইতিমধ্যে ভোট দিয়েছো।");V[+b.dataset.i]++;localStorage.setItem(K,JSON.stringify(V));localStorage.setItem(K+"v","1");render()})}render();
-const a=document.getElementById("dhakAudio"),s=document.getElementById("status"),b=document.getElementById("dhak");const files=["ঢাক.mp3","dhak.mp3","mahalaya.mp3"];let i=0;b.onclick=()=>{if(!a.src){a.src=files[i]||"ঢাক.mp3";i++;}a.play().then(()=>s.textContent="🔴 ঢাক বাজছে…").catch(()=>{if(i<files.length){a.src=files[i++];a.play().then(()=>s.textContent="🔴 ঢাক বাজছে…").catch(()=>s.textContent="⚠️ ঢাকের MP3 ফাইলটি পাওয়া যায়নি।")}})};
+const dhakBtn = document.getElementById('dhak');
+const dhakAudio = document.getElementById('dhakAudio');
+const statusText = document.getElementById('status');
+const dhakStateText = document.getElementById('dhakStateText');
+
+if (dhakBtn && dhakAudio) {
+  dhakBtn.addEventListener('click', () => {
+    if (dhakAudio.paused) {
+      dhakAudio.play();
+      if (statusText) statusText.textContent = '🟢 ঢাক বাজছে... (বন্ধ করতে আবার চাপ দিন)';
+      if (dhakStateText) dhakStateText.textContent = 'থামান';
+    } else {
+      dhakAudio.pause();
+      dhakAudio.currentTime = 0;
+      if (statusText) statusText.textContent = '🔴 ঢাক বাজাতে চাপ দিন';
+      if (dhakStateText) dhakStateText.textContent = 'বাজান';
+    }
+  });
+
+  dhakAudio.addEventListener('ended', () => {
+    if (statusText) statusText.textContent = '🔴 ঢাক বাজাতে চাপ দিন';
+    if (dhakStateText) dhakStateText.textContent = 'বাজান';
+  });
+}
