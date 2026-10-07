@@ -55,16 +55,28 @@
     </div>
   </section>  
 
+  <!-- জামাকাপড়ের পছন্দ সেকশন (বাটন ও পার্সেন্টেজ ফিক্সড) -->
   <section class="clothes">
     <div class="heading">
       <span>পুজোর প্রস্তুতি</span>
       <h2>কে কয় সেট জামা-কাপড় কিনেছে? 👕</h2>
       <p>১ থেকে ৬ সেটের মধ্যে নিজেরটি বেছে নাও</p>
     </div>
-    <div id="choices" class="choices"></div>
+
+    <!-- ১ থেকে ৬ সেটের বাটনসমূহ -->
+    <div id="choices" class="choices" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 20px;">
+      <button class="choice-btn" onclick="submitVote(1)" style="padding: 10px; border: 1px solid #ddd; background: #fff; color: #8b0000; border-radius: 8px; font-weight: bold; cursor: pointer;">১ সেট</button>
+      <button class="choice-btn" onclick="submitVote(2)" style="padding: 10px; border: 1px solid #ddd; background: #fff; color: #8b0000; border-radius: 8px; font-weight: bold; cursor: pointer;">২ সেট</button>
+      <button class="choice-btn" onclick="submitVote(3)" style="padding: 10px; border: 1px solid #ddd; background: #fff; color: #8b0000; border-radius: 8px; font-weight: bold; cursor: pointer;">৩ সেট</button>
+      <button class="choice-btn" onclick="submitVote(4)" style="padding: 10px; border: 1px solid #ddd; background: #fff; color: #8b0000; border-radius: 8px; font-weight: bold; cursor: pointer;">৪ সেট</button>
+      <button class="choice-btn" onclick="submitVote(5)" style="padding: 10px; border: 1px solid #ddd; background: #fff; color: #8b0000; border-radius: 8px; font-weight: bold; cursor: pointer;">৫ সেট</button>
+      <button class="choice-btn" onclick="submitVote(6)" style="padding: 10px; border: 1px solid #ddd; background: #fff; color: #8b0000; border-radius: 8px; font-weight: bold; cursor: pointer;">৬ সেট</button>
+    </div>
+
+    <!-- ফলাফল এবং পার্সেন্টেজ বার -->
     <div class="results">
-      <div class="result-head">
-        <b>📊 সবার ফলাফল</b>
+      <div class="result-head" style="display: flex; justify-content: space-between; margin-bottom: 10px; font-weight: bold;">
+        <span>📊 সবার ফলাফল</span>
         <span id="total">মোট ০ জন</span>
       </div>
       <div id="resultList"></div>
@@ -101,10 +113,7 @@
   </section>  
 
   <section>
-    <div class="heading">
-      <span>পুজোর গান</span>
-      <h2>শারদীয়ার সুর 🎵</h2>
-    </div>
+    <div class="heading"><span>পুজোর গান</span><h2>শারদীয়ার সুর 🎵</h2></div>
     <div class="songs">
       <div><b>০১</b><span>পুজোর গান ১</span><audio controls src="Puja Song 1.mp3"></audio></div>
       <div><b>০২</b><span>পুজোর গান ২</span><audio controls src="Puja Song 2.mp3"></audio></div>
@@ -123,5 +132,5 @@
 
 <script src="app.js"></script>
 </body>
-          </html>
-                                                          
+                </html>
+  
