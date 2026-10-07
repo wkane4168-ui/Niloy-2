@@ -1,58 +1,249 @@
-/* পুরো ওয়েবসাইটের স্কেল ও ফন্ট সামান্য ছোট করা */
-body {
-  font-size: 14px;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-h1 { font-size: 1.6rem !important; }
-h2 { font-size: 1.3rem !important; }
-h3 { font-size: 1.1rem !important; }
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fffdf7;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+}
 
-/* দুর্গার নতুন ত্রিশূল ও শারদীয়া থিম */
+.hero {
+  padding: 25px 15px;
+  background: #fdf6e7;
+  border-bottom: 2px solid #f0e2c5;
+}
+
+.hero .location {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.hero .eyebrow {
+  color: #8b0000;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+h1 {
+  font-size: 1.5rem;
+  color: #8b0000;
+  margin: 10px 0;
+}
+
+h1 span {
+  font-size: 1.2rem;
+  color: #d9534f;
+}
+
 .durga-theme {
   text-align: center;
-  margin-top: 15px;
-  padding: 12px;
+  margin: 12px auto 0;
+  padding: 10px;
   background: rgba(139, 0, 0, 0.05);
   border-radius: 12px;
   border: 1px dashed #8b0000;
+  max-width: 250px;
 }
+
 .trishul-icon {
-  font-size: 2.2rem;
+  font-size: 2rem;
   line-height: 1;
 }
+
 .theme-text {
   font-weight: bold;
   color: #8b0000;
-  margin-top: 4px;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
-/* ঢাকের বাটন ছোট করা */
-#dhak {
-  padding: 8px 16px !important;
-  font-size: 0.9rem !important;
-  max-width: 140px;
+section {
+  padding: 20px 15px;
+  max-width: 600px;
   margin: 0 auto;
 }
-#dhak span {
-  font-size: 1.5rem !important;
+
+.heading {
+  margin-bottom: 15px;
 }
 
-/* গ্যালারির ছবির ফাঁকা অংশ ছোট করা */
+.heading span {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #888;
+  letter-spacing: 1px;
+}
+
+.heading h2 {
+  font-size: 1.25rem;
+  color: #8b0000;
+}
+
+/* কাউন্টডাউন ডিজাইন */
+.countdowns {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+article {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.time-box {
+  background: #fdf6e7;
+  padding: 5px 8px;
+  border-radius: 6px;
+  min-width: 45px;
+}
+
+.time-box span {
+  display: block;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #8b0000;
+}
+
+.time-box small {
+  font-size: 0.65rem;
+  color: #666;
+}
+
+.days {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.days div {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 6px 4px;
+  border-radius: 6px;
+  flex: 1;
+}
+
+.days strong {
+  display: block;
+  font-size: 1rem;
+  color: #8b0000;
+}
+
+/* ঢাকের বাটন */
+.dhak-box {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+}
+
+#dhak {
+  background: #d9534f;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 3px 6px rgba(217, 83, 79, 0.3);
+}
+
+#dhak span {
+  font-size: 1.2rem;
+}
+
+#status {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: #555;
+}
+
+/* গ্যালারি */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
 }
+
 .gallery figure {
   margin: 0;
+  background: #eee;
   border-radius: 8px;
   overflow: hidden;
-  background: #f0f0f0;
 }
+
 .gallery img {
   width: 100%;
-  height: 110px;
+  height: 100px;
   object-fit: cover;
   display: block;
+}
+
+.gallery figcaption {
+  font-size: 0.75rem;
+  padding: 4px;
+  background: #fff;
+}
+
+/* গান */
+.songs div {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 8px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
+audio {
+  height: 30px;
+  max-width: 160px;
+}
+
+footer {
+  background: #fdf6e7;
+  padding: 20px 15px;
+  border-top: 2px solid #f0e2c5;
+  margin-top: 20px;
+}
+
+footer h2 {
+  font-size: 1.1rem;
+  color: #8b0000;
+}
+
+footer hr {
+  margin: 10px auto;
+  width: 50%;
+  border: 0;
+  border-top: 1px solid #ddd;
+}
+
+footer strong {
+  font-size: 0.8rem;
+  color: #666;
 }
